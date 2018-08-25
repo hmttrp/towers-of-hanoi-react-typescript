@@ -1,6 +1,12 @@
 import { Layer } from "./layer";
 import { Tower } from "./tower";
 
+export enum TowerPosition {
+  left = 0,
+  center = 1,
+  right = 2
+}
+
 export class Game {
   public pickedLayer: Layer | null;
 
@@ -24,22 +30,22 @@ export class Game {
     return this.towers[2];
   }
 
-  public pickup(towerIndex: number) {
+  public pickup(towerPosition: TowerPosition) {
     if (this.pickedLayer !== null) {
       throw new Error("Already picked up a layer");
     }
 
-    const tower = this.towers[towerIndex];
+    const tower = this.towers[towerPosition];
     const layer = tower.removeTopLayer();
     this.pickedLayer = layer;
   }
 
-  public place(towerIndex: number) {
+  public place(towerPosition: TowerPosition) {
     if (this.pickedLayer === null) {
       throw new Error("Pickup a layer first");
     }
 
-    const tower = this.towers[towerIndex];
+    const tower = this.towers[towerPosition];
     tower.placeLayer(this.pickedLayer);
     this.pickedLayer = null;
   }

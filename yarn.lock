@@ -1516,7 +1516,7 @@ color-string@^0.3.0:
   dependencies:
     color-name "^1.0.0"
 
-color@^0.11.0:
+color@^0.11.0, color@^0.11.1:
   version "0.11.4"
   resolved "https://registry.yarnpkg.com/color/-/color-0.11.4.tgz#6d7b5c74fb65e841cd48792ad1ed5e07b904d764"
   dependencies:
@@ -5561,6 +5561,12 @@ raf@3.4.0:
   resolved "https://registry.yarnpkg.com/raf/-/raf-3.4.0.tgz#a28876881b4bc2ca9117d4138163ddb80f781575"
   dependencies:
     performance-now "^2.1.0"
+
+random-color@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/random-color/-/random-color-1.0.1.tgz#fcfde5d054eefed8b90a8e39ebb06973c40253b1"
+  dependencies:
+    color "^0.11.1"
 
 randomatic@^3.0.0:
   version "3.1.0"

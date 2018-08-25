@@ -1,0 +1,15 @@
+.tower {
+  min-height: 25vh;
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+}
+
+.tower .baseline {
+  content: " ";
+  height: 7px;
+  width: 25vw;
+  margin: 0 2vw;
+  background-color: #3f3f3f;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+}

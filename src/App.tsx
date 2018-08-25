@@ -1,19 +1,17 @@
 import * as React from "react";
-import "./App.css";
 
-import logo from "./logo.svg";
+import { Game } from "./components/game/Game";
+import { Description } from "./Description";
+
+import "./app.css";
 
 class App extends React.Component {
   public render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.tsx</code> and save to reload.
-        </p>
+      <div className="app">
+        <h1>Tower of Hanoi</h1>
+        <Description visible={false} />
+        <Game />
       </div>
     );
   }
