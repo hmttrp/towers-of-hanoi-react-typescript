@@ -3,7 +3,7 @@ import * as React from "react";
 import randomColor from "random-color";
 
 import { Game as GameEngine, TowerPosition } from "../../engine/game";
-import { Layer } from "../layer/Layer";
+import { height, heightUnit, Layer } from "../layer/Layer";
 import { Tower } from "../tower/Tower";
 
 import "./game.css";
@@ -14,11 +14,13 @@ interface IState {
   game: GameEngine;
 }
 
+const MAX_LAYERS = 7;
+
 export class Game extends React.Component<{}, IState> {
   public state = {
     color: [],
     error: "",
-    game: new GameEngine()
+    game: new GameEngine(MAX_LAYERS)
   };
 
   public componentDidMount() {
@@ -75,7 +77,10 @@ export class Game extends React.Component<{}, IState> {
     const { color, error } = this.state;
 
     return (
-      <div className="game">
+      <div
+        className="game"
+        style={{ height: MAX_LAYERS * height + heightUnit }}
+      >
         <div className="picked-layer">
           <h4>Picked Layer</h4>
           {pickedLayer ? (

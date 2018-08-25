@@ -12,8 +12,8 @@ export class Game {
 
   private towers: [Tower, Tower, Tower];
 
-  constructor() {
-    this.towers = [new Tower(3), new Tower(0), new Tower(0)];
+  constructor(height: number) {
+    this.towers = [new Tower(height), new Tower(0), new Tower(0)];
 
     this.pickedLayer = null;
   }

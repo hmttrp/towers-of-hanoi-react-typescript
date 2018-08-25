@@ -5,9 +5,12 @@ interface IProps {
   color: string;
 }
 
+export const height = 5;
+export const heightUnit = "vh";
+
 export class Layer extends React.Component<IProps> {
   public render() {
-    const width = this.props.size * 5;
+    const width = this.props.size * 2;
 
     return (
       <div
@@ -15,8 +18,8 @@ export class Layer extends React.Component<IProps> {
         style={{
           backgroundColor: this.props.color,
           content: " ",
-          height: "5vh",
-          width: width + "vh"
+          height: height + heightUnit,
+          width: width + "vw"
         }}
       >
         {" "}
